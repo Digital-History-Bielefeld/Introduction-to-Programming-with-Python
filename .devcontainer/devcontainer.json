@@ -1,0 +1,20 @@
+{
+    "name": "Introduction to Programming with Python",
+
+    // Configure tool-specific properties.
+    "customizations": {
+      // Configure properties specific to VS Code.
+      "vscode": {
+        // Add the IDs of extensions you want installed when the container is created.
+        "extensions": [
+          "ms-python.python",
+          "ms-toolsai.jupyter"
+        ],
+        "settings": {
+          "workbench.editorAssociations": {
+            "*.md": "vscode.markdown.preview.editor"
+          }
+        }
+      }
+    }
+  }
