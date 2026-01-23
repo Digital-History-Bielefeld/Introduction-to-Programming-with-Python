@@ -48,12 +48,6 @@ The aim of the course is to provide you with **basic knowledge of the Python pro
 - **TF-IDF (Term Frequency-Inverse Document Frequency)**: A statistical measure used to evaluate the importance of a word in a document relative to a collection of documents
 - **Libraries for Text Analysis Tasks**: An overview of popular Python libraries for text analysis, including SpaCy, NLTK, and Gensim
 
-**Section 4: Data Visualization techniques**
-- Importance of data visualization in historical research
-- Introduction to Matplotlib
-- Creating basic plots
-- displaCy for visualizing NLP results
-
 There is a folder for each of the sections, which contains the content of the learning unit and is designed to be as interactive as possible. Each folder contains a `README.md` file. Open that one first and read through the contents and then continue with the included exercise files.
 
 ## Information about the key utilities used
