@@ -15,8 +15,6 @@ In this section you will learn some basic techniques for text analysis using Pyt
 - **Text Preprocessing**: Techniques for cleaning and preparing text data for analysis
 - **Word Frequency Analysis**: How to analyze the frequency of words in a text
 - **N-gram Analysis**: How to analyze sequences of words in a text
-- **TF-IDF (Term Frequency-Inverse Document Frequency)**: A statistical measure used to evaluate the importance of a word in a document relative to a collection of documents
-- **Libraries for Text Analysis Tasks**: An overview of popular Python libraries for text analysis, including SpaCy, NLTK, and Gensim
 
 This concepts are a good toolbox for historians to analyze texts and extract meaningful information from them. They are powerful techniques that can be applied to a wide range of historical texts, from letters and diaries to newspapers and official documents. For now we will work with a text from Edgar Allan Poe to practice these techniques.
 
@@ -84,38 +82,3 @@ N-gram analysis involves examining sequences of 'n' consecutive words (n-grams) 
 - "lazy dog"
 
 This technique shows how words are used in context and can help identify collocations (words that frequently occur together) and common expressions in the text. For historians, n-gram analysis can reveal important phrases and terminology used in historical documents, which can provide insights into the language and discourse of the time. Compared to word frequency analysis, n-gram analysis provides more context about how words are used together, which can be particularly useful for understanding idiomatic expressions and specific terminology in historical texts.
-
-### TF-IDF (Term Frequency-Inverse Document Frequency)
-
-TF-IDF is a statistical measure used to evaluate the importance of a word in a document relative to a collection of documents (corpus). It combines two metrics:
-- Term Frequency (TF): The number of times a word appears in a document.
-- Inverse Document Frequency (IDF): A measure of how common or rare a word is across all documents in the corpus.
-TF-IDF helps identify words that are significant in a specific document while down-weighting common words that appear frequently across all documents. Compared to simple word frequency analysis or n-gram analysis, TF-IDF provides a more nuanced view of word importance by considering both the frequency of a word in a document and its rarity across the corpus. This makes TF-IDF particularly useful for tasks such as information retrieval, document classification, and topic modeling, where the goal is to identify words that are most relevant to a specific document or topic.
-
-### Topic Modeling
-
-Topic modeling is a technique used to identify and extract topics from a collection of documents. It is an unsupervised machine learning method that analyzes the words in the documents and groups them into topics based on their co-occurrence patterns. Topic modeling can help to identify underlying themes and topics in large collections of historical texts, such as letters, diaries, newspapers, and official records. By analyzing the topics present in the texts, historians can gain insights into the main issues and concerns of a particular time period or social group. Topic modeling can also be used to track changes in topics over time, identify relationships between different topics, and explore the connections between different documents in a corpus.
-
-### Document Clustering
-
-Document clustering is a technique used to group similar documents together based on their content. It is an unsupervised machine learning method that analyzes the words and phrases in the documents and identifies patterns of similarity.
-
-### Sentiment Analysis
-
-Sentiment analysis is a technique used to determine the emotional tone or sentiment expressed in a piece of text. It is a form of natural language processing (NLP) that involves analyzing the words and phrases in the text to identify whether the sentiment is positive, negative, or neutral. For example, you can use sentiment analysis to analyze letters, diaries, or newspaper articles from a particular time period to understand the emotional tone of the texts. This can provide insights into the attitudes and opinions of individuals or groups during that time period, as well as the social and political context in which the texts were written.
-
-## Which to use for your research?
-
-The choice of technique depends on your specific research question and the nature of the text data you are analyzing. Most of the time you will use a combination of these techniques to gain a comprehensive understanding of the text data. For example, you might start with text preprocessing to clean and prepare the data, then use word frequency analysis and n-gram analysis to identify common words and phrases, and finally apply TF-IDF or topic modeling to identify important words and topics in the text. You can also use named entity recognition (NER) to extract specific entities such as names, places, and dates from the text.
-Always keep in mind that these techniques are tools to help you analyze and interpret the text data, but they should be used in conjunction with your own knowledge and expertise as a historian. It is important to critically evaluate the results of your analysis and consider the historical context in which the texts were written. Furthermore, most of the methods are not specialised for historical texts, so you might need to adapt them to the specific characteristics of your data. Today we will focus on NER, text preprocessing, word frequency analysis, n-gram analysis and TF-IDF.
-
-## Libraries for Text Analysis Tasks
-
-### spaCy
-[SpaCy](https://spacy.io/) is an open-source library for advanced NLP in Python. It provides pre-trained models and tools for various NLP tasks, including tokenization, part-of-speech tagging, named entity recognition (NER), dependency parsing, and more. SpaCy is designed for performance and ease of use, making it a popular choice for NLP applications.
-
-### NLTK
-The [Natural Language Toolkit (NLTK)](https://www.nltk.org/) is a comprehensive library for NLP in Python. It offers a wide range of tools and resources for text processing, including tokenization, stemming, lemmatization, parsing, and classification. NLTK also provides access to various corpora and lexical resources, making it a valuable tool for researchers and developers working with text data.
-
-### Gensim
-[Gensim](https://radimrehurek.com/gensim/) is a library for topic modeling and document similarity analysis in Python. It is particularly well-suited for handling large text corpora and provides efficient implementations of algorithms such as Latent Dirichlet Allocation (LDA) and Word2Vec. Gensim is widely used for tasks such as topic modeling, document clustering, and semantic similarity analysis.

@@ -45,8 +45,6 @@ The aim of the course is to provide you with **basic knowledge of the Python pro
 - **Text Preprocessing**: Techniques for cleaning and preparing text data for analysis
 - **Word Frequency Analysis**: How to analyze the frequency of words in a text
 - **N-gram Analysis**: How to analyze sequences of words in a text
-- **TF-IDF (Term Frequency-Inverse Document Frequency)**: A statistical measure used to evaluate the importance of a word in a document relative to a collection of documents
-- **Libraries for Text Analysis Tasks**: An overview of popular Python libraries for text analysis, including SpaCy, NLTK, and Gensim
 
 There is a folder for each of the sections, which contains the content of the learning unit and is designed to be as interactive as possible. Each folder contains a `README.md` file. Open that one first and read through the contents and then continue with the included exercise files.
 

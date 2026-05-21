@@ -55,56 +55,7 @@ In this exercise, we will perform a context analysis of a text by finding the mo
 
    The parameter `n` specifies the size of the n-grams (e.g., 2 for bigrams, 3 for trigrams), and `top_k` specifies how many of the most common n-grams you want to return. You can call this function with the `clean_tokens` variable and print the result to see the most common bigrams in the text.
 
-6. Finally, we will calculate the TF–IDF scores for the words in the texts. TF–IDF (Term Frequency–Inverse Document Frequency) is a statistical measure used to evaluate how important a word is in a document relative to a collection of documents (the corpus). It highlights words that occur frequently in one text but less often in others — thus identifying terms that are *characteristic* for a given document.
-
-   Define a function called `find_top_tfidf_words` that takes a list of tokenized texts (`all_tokens`) and returns the top TF–IDF words for each document:
-
-   ```python
-   def find_top_tfidf_words(all_tokens, top_n=10):
-       dictionary = corpora.Dictionary(all_tokens)
-       corpus = [dictionary.doc2bow(tokens) for tokens in all_tokens]
-       tfidf = TfidfModel(corpus)
-       corpus_tfidf = tfidf[corpus]
-
-       top_tfidf_per_doc = []
-       for doc in corpus_tfidf:
-           sorted_doc = sorted(doc, key=lambda x: x[1], reverse=True)
-           top_terms = [(dictionary[term_id], round(score, 4)) for term_id, score in sorted_doc[:top_n]]
-           top_tfidf_per_doc.append(top_terms)
-       return top_tfidf_per_doc
-   ```
-
-   You can call this function after you have preprocessed all texts:
-
-   ```python
-   top_tfidf_words = find_top_tfidf_words(all_tokens, top_n=10)
-   ```
-
-   Optionally, you can define a helper function for formatted printing:
-
-   ```python
-   def print_tfidf_results(top_tfidf_words):
-       for i, doc in enumerate(top_tfidf_words):
-           print(f"\nTop TF–IDF words for document {i+1}:")
-           for word, score in doc:
-               print(f"  {word}: {score:.4f}")
-   ```
-
-   Then call:
-
-   ```python
-   print_tfidf_results(top_tfidf_words)
-   ```
-
-   The TF–IDF value shows how *distinctive* a word is for one text.
-
-   * A **high TF–IDF score** means that the word appears often in this text but rarely in others. So it is likely to be more meaningful and characteristic for this document.
-   * A **low TF–IDF score** means that the word appears frequently across all texts and is therefore less specific.
-
-   Example: In a corpus of early modern letters, a word like *merchant* might have a high TF–IDF score in one text written by a trader but not in others — indicating a distinct topic or authorship.
-
 
 So, what did we learned about the sources?
 - The most common words in the text give us an idea of the main themes and topics discussed. For example, if we see words like "witch," "trial," and "accused" frequently, it indicates that the text is likely about witch trials. However, this method simply counts the words without taking any other parameters into account.
 - The n-grams help us identify common phrases or word combinations that might be significant in the context of the text. For example, if we find bigrams like "witch trial" or "accused witch," it suggests that these phrases are important in the narrative.
-- The TF–IDF scores help us identify words that are particularly relevant to this specific text compared to others in the corpus. Words with high TF–IDF scores are likely to be more meaningful and specific to the content of the text, while common words with low scores may not provide much insight into the unique aspects of the document. This helps us to find special parts of the text that are not just common words but are more specific to the context of the document.
